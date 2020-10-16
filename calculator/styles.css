@@ -56,3 +56,44 @@ body {
   color: white;
   font-size: 2.5rem;
 }
+
+.reminder {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #ffffffed;
+}
+
+.reminder__content {
+  max-width: 640px;
+  line-height: 26px;
+  position: relative;
+}
+
+.reminder__title {
+  padding: 20px;
+  font-size: 18px;
+}
+
+.reminder__description {
+  padding: 5px;
+}
+
+.reminder__description > span {
+  display: block;
+  margin-top: 10px;
+}
+
+.agree-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: none;
+  border: none;
+}
+.agree-button:hover {
+  cursor: pointer;
+}
