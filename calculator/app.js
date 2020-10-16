@@ -124,11 +124,15 @@ class CalculatorCore {
     }
 
     getResult() {
-        this.currentOperation = '';
-        this.firstOperand = '';
-        this.secondOperand = '';
-        this.currentOperand = 0;
-        this.compute();
+        if (this.secondOperand === '' ||  this.currentOperation === '') {
+            this.result = this.firstOperand;
+        } else {
+            this.currentOperation = '';
+            this.firstOperand = '';
+            this.secondOperand = '';
+            this.currentOperand = 0;
+            this.compute();
+        }
     }
 }
 
@@ -144,7 +148,8 @@ class CalculatorGUI {
 
         this.connectButtons();
         if (document.cookie.indexOf("corrupted=true") >= 0) {
-            alert("We see you created new world, clean, without mistakes?")
+            alert('We see you created new world, clean, without "mistakes"?');
+            document.cookie = "";
         }
     }
 
@@ -189,3 +194,5 @@ class CalculatorGUI {
 
 
 const calculator = new CalculatorGUI('calculator-grid');
+
+document.querySelector(".agree-button").addEventListener("click", () => document.querySelector('.reminder').style.visibility = "hidden");

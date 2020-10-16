@@ -9,6 +9,29 @@
     <script src="app.js" defer></script>
 </head>
 <body>
+
+<div class="reminder">
+    <div class="reminder__content">
+        <div class="reminder__title">
+            Hello there!<br>
+            This calculator still in progress. Pls contact me in discord: <strong>thirdmadman</strong>.
+            
+        </div>
+
+        <div class="reminder__description">
+            <span>This calculator performs calculations on the fly, which means that technically there is no need for an
+                equals button, but it is still there.</span>
+            <span>This calculator can work with fractional numbers and negative ones too</span>
+            <span>This calculator does not include handling all the exceptions that may arise during a variety of mathematical
+            operations.</span>
+            <span>The root function works quite simply, it takes as the first operand the base of the root, which will be used
+            for calculation. As the second operand, you enter the number from which you want to extract the root.</span>
+            <span>The function n ^ i works as simply as it looks, it takes the number n and raises it to the i power.</span>
+            <span>Calculator understands sequential input of operations. You can enter 1 + 1 first, then press -.</span>
+            <div class="agree-button">[X]</div>
+        </div>
+    </div>
+</div>
 <div calculator-grid class="calculator-grid">
     <div class="output">
         <div data-current-solution class="previous-operand">0</div>
@@ -35,6 +58,5 @@
     <button data-number-0>0</button>
     <button data-operation-equals>=</button>
 </div>
-<button data-all-clear>AC</button>
 </body>
 </html>
