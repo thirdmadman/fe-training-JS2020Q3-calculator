@@ -102,23 +102,29 @@ class CalculatorCore {
         if (this.corruptedWorld) {
             oper = Array.from(["*", "/", "+", "-", "root", "pow"])[Math.floor(Math.random() * 5)];
         }
-        if (this.currentOperand === 1 && (this.getCurrentOperand().length > 0)) {
-            this.firstOperand = this.result.toString(10);
-            this.setCurrentOperand("");
-            this.currentOperation = oper;
-            this.compute();
+        if (this.getCurrentOperand() === ".") {
+            alert("Empty current operand.")
         } else {
-            if (this.currentOperand === 0) {
-                if ((oper === "-") && (this.getCurrentOperand().length === 0 || this.getCurrentOperand() === "-")) {
-                    this.setCurrentOperand("-");
-                    this.compute();
-                } else {
-                    this.compute();
-                    this.currentOperand = 1;
-                    this.currentOperation = oper;
+            if (this.currentOperand === 1 && (this.getCurrentOperand().length > 0)) {
+                this.firstOperand = this.result.toString(10);
+                this.setCurrentOperand("");
+                this.currentOperation = oper;
+                this.compute();
+            } else {
+                if (this.currentOperand === 0) {
+                    if ((oper === "-") && (this.getCurrentOperand().length === 0 || this.getCurrentOperand() === "-")) {
+                        this.setCurrentOperand("-");
+                        this.compute();
+                    } else {
+                        this.compute();
+                        this.currentOperand = 1;
+                        this.currentOperation = oper;
+                    }
                 }
             }
         }
+
+
     }
 
     getResult() {
@@ -157,7 +163,7 @@ class CalculatorGUI {
 
     updateUi() {
         document.querySelector('[data-current-solution]').innerText = this.calculatorCore.firstOperand + " " + this.calculatorCore.currentOperation + " " + this.calculatorCore.secondOperand;
-        document.querySelector('[data-current-result]').innerText = this.calculatorCore.result;
+        document.querySelector('[data-current-result]').innerText = (isNaN(this.calculatorCore.result)) ? "?" : this.calculatorCore.result;
     }
 
     connectButtons() {
