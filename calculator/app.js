@@ -53,31 +53,29 @@ class CalculatorCore {
                         document.cookie = "corrupted=true; max-age=360000000";
                         this.corruptedWorld = true;
                         this.setAllClear();
-                    }
-                    else {
+                    } else {
                         this.result = Number((Number(this.firstOperand) / Number(this.secondOperand)).toFixed(6));
                     }
                     break;
                 case "pow":
-                    this.result = Number(Math.pow( this.firstOperand,this.secondOperand));
+                    this.result = Number(Math.pow(this.firstOperand, this.secondOperand));
                     break;
                 case "root":
                     if (this.firstOperand < 0) {
                         alert("Root from negative number. Abortion.");
                         this.setAllClear();
                     }
-                    this.result = Number(Math.exp((1/this.secondOperand)*Math.log(this.firstOperand)));
+                    this.result = Number(Math.exp((1 / this.secondOperand) * Math.log(this.firstOperand)));
                     break;
             }
         }
     }
 
 
-
     joinNumToCurrentOperand(number) {
         let num = number;
         if (this.corruptedWorld) {
-            num = Array.from([".","0","1","1","3","4","5","6","7","8","9"])[Math.floor(Math.random() *  11)];
+            num = Array.from([".", "0", "1", "1", "3", "4", "5", "6", "7", "8", "9"])[Math.floor(Math.random() * 11)];
         }
 
         if (num === "-" && this.getCurrentOperand().indexOf("-") >= 0) {
@@ -102,29 +100,29 @@ class CalculatorCore {
     exeOperation(operation) {
         let oper = operation;
         if (this.corruptedWorld) {
-            oper = Array.from(["*","/","+","-","root","pow"])[Math.floor(Math.random() *  5)];
+            oper = Array.from(["*", "/", "+", "-", "root", "pow"])[Math.floor(Math.random() * 5)];
         }
-            if (this.currentOperand === 1 && oper !== "-") {
-                this.firstOperand = this.result.toString(10);
-                this.setCurrentOperand("");
-                this.currentOperation = oper;
-                this.compute();
-            }
-            else {
-                if ((oper === "-") && (this.getCurrentOperand() === 0 || this.getCurrentOperand().length === 0)) {
+        if (this.currentOperand === 1 && (this.getCurrentOperand().length > 0)) {
+            this.firstOperand = this.result.toString(10);
+            this.setCurrentOperand("");
+            this.currentOperation = oper;
+            this.compute();
+        } else {
+            if (this.currentOperand === 0) {
+                if ((oper === "-") && (this.getCurrentOperand().length === 0 || this.getCurrentOperand() === "-")) {
                     this.setCurrentOperand("-");
+                    this.compute();
                 } else {
                     this.compute();
                     this.currentOperand = 1;
                     this.currentOperation = oper;
                 }
             }
-
-
+        }
     }
 
     getResult() {
-        if (this.secondOperand === '' ||  this.currentOperation === '') {
+        if (this.secondOperand === '' || this.currentOperation === '') {
             this.result = this.firstOperand;
         } else {
             this.currentOperation = '';
