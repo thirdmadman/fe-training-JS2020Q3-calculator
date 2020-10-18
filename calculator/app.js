@@ -111,7 +111,7 @@ class CalculatorCore {
                 this.currentOperation = oper;
                 this.compute();
             } else {
-                if (this.currentOperand === 0) {
+                //if (this.currentOperand === 0) {
                     if ((oper === "-") && (this.getCurrentOperand().length === 0 || this.getCurrentOperand() === "-")) {
                         this.setCurrentOperand("-");
                         this.compute();
@@ -120,7 +120,7 @@ class CalculatorCore {
                         this.currentOperand = 1;
                         this.currentOperation = oper;
                     }
-                }
+                //}
             }
         }
 
