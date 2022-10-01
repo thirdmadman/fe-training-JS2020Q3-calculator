@@ -1,60 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Calculator</title>
-    <link href="styles.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" />
     <script src="app.js" defer></script>
-</head>
-<body>
-
-<div class="reminder">
-    <div class="reminder__content">
-        <div class="reminder__title">
-            Expression calculator<br>
-        </div>
+  </head>
+  <body>
+    <div class="reminder">
+      <div class="reminder__content">
+        <div class="reminder__title">Expression calculator<br /></div>
         <div class="reminder__description">
-            <span>This calculator performs calculations on the fly, which means that technically there is no need for an
-                equals button, but it is still there.</span>
-            <span>This calculator can work with fractional numbers and negative ones too</span>
-            <span>This calculator does not include handling all the exceptions that may arise during a variety of mathematical
-            operations.</span>
-            <span>The root function works quite simply, it takes as the first operand the base of the root, which will be used
-            for calculation. As the second operand, you enter the number from which you want to extract the root.</span>
-            <span>The function n ^ i works as simply as it looks, it takes the number n and raises it to the i power.</span>
-            <span>Calculator understands sequential input of operations. You can enter 1 + 1 first, then press -.</span>
-            <div class="agree-button">[X]</div>
+          <span>This calculator performs calculations on the fly, which means that technically there is no need for an equals button, but it is still there.</span>
+          <span>This calculator can work with fractional numbers and negative ones too</span>
+          <span>This calculator does not include handling all the exceptions that may arise during a variety of mathematical operations.</span>
+          <span>
+            The root function works quite simply, it takes as the first operand the base of the root, which will be used for calculation. As the second operand, you enter the
+            number from which you want to extract the root.
+          </span>
+          <span>The function n ^ i works as simply as it looks, it takes the number n and raises it to the i power.</span>
+          <span>Calculator understands sequential input of operations. You can enter 1 + 1 first, then press -.</span>
+          <div class="agree-button">[X]</div>
         </div>
+      </div>
     </div>
-</div>
 
-<div calculator-grid class="calculator-grid">
-    <div class="output">
+    <div calculator-grid class="calculator-grid">
+      <div class="help-button">?</div>
+      <div class="output">
         <div data-current-solution class="previous-operand">0</div>
         <div data-current-result class="current-operand">0</div>
+      </div>
+      <button data-operation-all-clear>AC</button>
+      <button data-operation-root>root</button>
+      <button data-operation-pow>n^i</button>
+      <button data-operation-delete>DEL</button>
+      <button data-operation-division>÷</button>
+      <button data-number-1>1</button>
+      <button data-number-2>2</button>
+      <button data-number-3>3</button>
+      <button data-operation-multiply>*</button>
+      <button data-number-4>4</button>
+      <button data-number-5>5</button>
+      <button data-number-6>6</button>
+      <button data-operation-sum>+</button>
+      <button data-number-7>7</button>
+      <button data-number-8>8</button>
+      <button data-number-9>9</button>
+      <button data-operation-diff>-</button>
+      <button data-number-dot>.</button>
+      <button data-number-0>0</button>
+      <button data-operation-equals>=</button>
     </div>
-    <button data-operation-all-clear>AC</button>
-    <button data-operation-root>root</button>
-    <button data-operation-pow>n^i</button>
-    <button data-operation-delete>DEL</button>
-    <button data-operation-division>÷</button>
-    <button data-number-1>1</button>
-    <button data-number-2>2</button>
-    <button data-number-3>3</button>
-    <button data-operation-multiply>*</button>
-    <button data-number-4>4</button>
-    <button data-number-5>5</button>
-    <button data-number-6>6</button>
-    <button data-operation-sum>+</button>
-    <button data-number-7>7</button>
-    <button data-number-8>8</button>
-    <button data-number-9>9</button>
-    <button data-operation-diff>-</button>
-    <button data-number-dot>.</button>
-    <button data-number-0>0</button>
-    <button data-operation-equals>=</button>
-</div>
-</body>
+
+  </body>
 </html>
