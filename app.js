@@ -192,4 +192,8 @@ class CalculatorGUI {
 
 const calculator = new CalculatorGUI('calculator-grid');
 
+document.querySelector('.reminder').style.visibility = 'hidden';
+
+document.querySelector('.help-button').addEventListener('click', () => (document.querySelector('.reminder').style.visibility = 'visible'));
+
 document.querySelector('.agree-button').addEventListener('click', () => (document.querySelector('.reminder').style.visibility = 'hidden'));
