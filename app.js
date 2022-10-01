@@ -156,9 +156,10 @@ class CalculatorGUI {
   }
 
   updateUi() {
+    let firstOperand = this.calculatorCore.firstOperand || 0;
     document.querySelector('[data-current-solution]').innerText =
-      this.calculatorCore.firstOperand + ' ' + this.calculatorCore.currentOperation + ' ' + this.calculatorCore.secondOperand;
-    document.querySelector('[data-current-result]').innerText = isNaN(this.calculatorCore.result) ? '?' : this.calculatorCore.result;
+    firstOperand + ' ' + this.calculatorCore.currentOperation + ' ' + this.calculatorCore.secondOperand;
+    document.querySelector('[data-current-result]').innerText = isNaN(this.calculatorCore.result) ? '?' : this.calculatorCore.result || 0;
   }
 
   connectButtons() {
