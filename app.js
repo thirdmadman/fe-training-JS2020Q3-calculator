@@ -131,6 +131,8 @@ class CalculatorCore {
       this.secondOperand = '';
       this.currentOperand = 0;
       this.compute();
+
+      this.firstOperand = this.result;
     }
   }
 }
